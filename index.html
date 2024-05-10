@@ -48,6 +48,28 @@
 </head>
 
 <body>
+
+    <script>
+
+        var customRequest = new Request('https://localhost:7276/api/csp', {
+            method: 'GET',
+            headers: {
+                'Referrer': 'https://custom-referrer.com'
+            }
+        });
+
+        fetch(customRequest)
+            .then(response => {
+
+                if (response.ok) {
+
+                    return console.log('Yes')
+                }
+
+                return console.log('No')
+            });
+    </script>
+
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
